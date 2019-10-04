@@ -727,24 +727,29 @@ label {
 }
 
 .c-button:hover {
-	background: var(--global-color-alpha-light);
+	background: var(--button-hover-background, --global-color-alpha-light);
 }
 
 .c-button:focus {
-	background: var(--global-color-alpha-light);
-
+	background: var(--button-focus-background, --global-color-alpha-light);
 	outline: none;
 	box-shadow: 0 0 0 3px var(--global-color-transparent-light);
 }
 
 .c-button:active {
-	background: var(--global-color-alpha-dark);
+	background: var(--button-active-background, --global-color-alpha-dark);
 	box-shadow: none;
 }
 
 .c-button--block {
 }
-
+@media (prefers-color-scheme: dark) {
+	.c-button {
+		--button-hover-background: var(--global-color-alpha-x-dark);
+		--button-focus-background: var(--global-color-alpha-x-dark);
+		--button-active-background: var(--global-color-alpha-dark);
+	}
+}
 /*
     Component: Option list
     ---
